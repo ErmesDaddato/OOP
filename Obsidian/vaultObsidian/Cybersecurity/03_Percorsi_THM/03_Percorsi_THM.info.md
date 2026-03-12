@@ -1,1 +1,0 @@
-Qui sono contenute tutte le cartelle riguardanti i diversi percorsi affrontati, contenenti a loro volta le note con i passaggi eseguiti per risolvere le diverse stanze ("Room").
