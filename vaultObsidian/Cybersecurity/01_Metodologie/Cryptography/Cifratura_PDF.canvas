@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{"id":"8ff0131cd6e1dc8f","x":-160,"y":-480,"width":250,"height":60,"type":"text","text":"# Cifratura File PDF"},
+		{"id":"8f8eec79f947a7ec","x":-160,"y":-331,"width":250,"height":60,"type":"text","text":"I file PDF possono avere due password"},
+		{"id":"92e239fd188ab754","x":-322,"y":-191,"width":250,"height":60,"type":"text","text":"User Password (permette di decifrare il file)"},
+		{"id":"03758a8af532cf64","x":-157,"y":-28,"width":250,"height":108,"type":"text","text":"Non viene salvato l'hash della password per verifica, ma segue un percorso diverso"},
+		{"id":"1ebf5ed04da3e2f5","x":-157,"y":140,"width":250,"height":128,"type":"text","text":"Viene salvato l'hash della KDF (Key Derivation Function) ottenuta mediante una delle due password"},
+		{"id":"26feb5fe8e99d0f4","x":-305,"y":360,"width":250,"height":100,"type":"text","text":"L'hash della KDF generata dalla password utente viene salvato nel campo -U"},
+		{"id":"d4edea3918cc4daa","x":30,"y":367,"width":250,"height":93,"type":"text","text":"L'hash della KDF generata dalla password owner viene salvata nel campo -O"},
+		{"id":"9363975f8f7ceaeb","x":300,"y":836,"width":300,"height":50,"type":"text","text":"**2 Livello di verifica (key integrity)**"},
+		{"id":"e7849d17700c3c25","x":-157,"y":536,"width":250,"height":144,"type":"text","text":"Se l'hash corrisponde viene decifrata la -UE (user encryption) o la -OE che contiene la KFE (Key File Encryption)"},
+		{"id":"ea07c0139e2e6457","x":-157,"y":742,"width":250,"height":238,"type":"text","text":"La KFE dopo essere stata decifrata, contiene dei byte di validazione (questo per evitare collisioni e aggiungere un livello di sicurezza), questi byte sono noti e servono solo a vedere se la chiave è stata correttamente decifrata"},
+		{"id":"95c0c1d1a2c0a7de","x":-157,"y":1040,"width":250,"height":50,"type":"text","text":"Il file viene decifrato"},
+		{"id":"0986f18c40f1ab5a","x":290,"y":583,"width":320,"height":50,"type":"text","text":"**1 Livello di verifica (hash validation)**"},
+		{"id":"e0344b921ba74304","x":30,"y":-191,"width":250,"height":60,"type":"text","text":"Owner Password (permette di modificare il file)"},
+		{"id":"a6c6ed660c88bc31","x":-216,"y":1180,"width":369,"height":233,"type":"text","text":"## Aumento della sicurezza\n\nSalvare l'hash della KDE e non della password permette di rallentare notevolmente il cracking dell'hash in quanto ogni password deve fare non solo molti cicli di hash ma anche passare attraverso una o più KDF che sono molto lente"}
+	],
+	"edges":[
+		{"id":"f1206c4b1ae954ab","fromNode":"8ff0131cd6e1dc8f","fromSide":"bottom","toNode":"8f8eec79f947a7ec","toSide":"top"},
+		{"id":"a902aab4318004e2","fromNode":"8f8eec79f947a7ec","fromSide":"bottom","toNode":"92e239fd188ab754","toSide":"top"},
+		{"id":"775005e1d42508af","fromNode":"8f8eec79f947a7ec","fromSide":"bottom","toNode":"e0344b921ba74304","toSide":"top"},
+		{"id":"089efc7ca1414c33","fromNode":"92e239fd188ab754","fromSide":"bottom","toNode":"03758a8af532cf64","toSide":"top"},
+		{"id":"96da04b0588701e2","fromNode":"e0344b921ba74304","fromSide":"bottom","toNode":"03758a8af532cf64","toSide":"top"},
+		{"id":"3a36702079f878a2","fromNode":"03758a8af532cf64","fromSide":"bottom","toNode":"1ebf5ed04da3e2f5","toSide":"top"},
+		{"id":"b5553a66662e6a1d","fromNode":"1ebf5ed04da3e2f5","fromSide":"bottom","toNode":"26feb5fe8e99d0f4","toSide":"top"},
+		{"id":"e2177680f25b1eb8","fromNode":"1ebf5ed04da3e2f5","fromSide":"bottom","toNode":"d4edea3918cc4daa","toSide":"top"},
+		{"id":"1f8643e64fa75159","fromNode":"d4edea3918cc4daa","fromSide":"bottom","toNode":"e7849d17700c3c25","toSide":"top"},
+		{"id":"61ff6d03aa6f6341","fromNode":"26feb5fe8e99d0f4","fromSide":"bottom","toNode":"e7849d17700c3c25","toSide":"top"},
+		{"id":"2066f9a3fd6de84a","fromNode":"e7849d17700c3c25","fromSide":"bottom","toNode":"ea07c0139e2e6457","toSide":"top"},
+		{"id":"66046aca4cf3ad31","fromNode":"0986f18c40f1ab5a","fromSide":"left","toNode":"e7849d17700c3c25","toSide":"right"},
+		{"id":"b358954fda32f2a2","fromNode":"9363975f8f7ceaeb","fromSide":"left","toNode":"ea07c0139e2e6457","toSide":"right"},
+		{"id":"11961c126ddea0c5","fromNode":"ea07c0139e2e6457","fromSide":"bottom","toNode":"95c0c1d1a2c0a7de","toSide":"top"}
+	]
+}

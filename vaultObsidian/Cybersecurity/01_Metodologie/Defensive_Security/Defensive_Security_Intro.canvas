@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"f75cf65298b915e2","type":"text","text":"**Defensive Security Intro**","x":-120,"y":-420,"width":240,"height":60},
+		{"id":"09968526abe0bdb3","type":"text","text":"**SOC**\n\nÈ un team di esperti in cybersicurezza che analizza una rete col fine di prevenire o rispondere ad eventuali attacchi","x":-400,"y":-239,"width":250,"height":194},
+		{"id":"b0c88dfc79d2fff3","type":"text","text":"**Threat Intelligence**\n\nRiguarda la raccolta di dati ed informazioni, e la loro successiva analisi, utile ad identificare i possibili nemici e attaccanti di un'infrastruttura. In questo modo è possibile prevedere i loro obbiettivi e la loro strategia di attacco.","x":-400,"y":32,"width":250,"height":300},
+		{"id":"9e519b39c620fe9f","type":"text","text":"**DFIR**","x":260,"y":-239,"width":250,"height":60},
+		{"id":"18257b3fc90c7b53","type":"text","text":"**Digital Forensics**\n\nSi occupa dell'analisi di crimini informatici mediante lo studio del File System, i log di sistema e tutto ciò che può dare informazioni riguardo l'attaccante e su come sia avvenuto l'attacco","x":60,"y":-84,"width":250,"height":266},
+		{"id":"819f7f4369c33992","type":"text","text":"**Incident Response**\n\nSi occupa di preparare una strategia di difesa per rispondere ad un eventuale attacco. Le 4 fasi principali per rispondere ad un attacco sono:\n- Preparation\n- Detection and Analysis\n- Containment, Eradication and Recovery\n- Post-Incident Activity","x":423,"y":-84,"width":377,"height":324},
+		{"id":"82a59d052ef8aec0","x":1040,"y":-239,"width":340,"height":299,"type":"text","text":"**Malware Analysis**\n\nSi occupa dello studio dei software malevoli e si divide in:\n\n- *Static analysis*, si occupa dello studio senza eseguire il codice, (richiede di conoscere l'assembly)\n- *Dynamic analysis*, si occupa dello studio eseguendo il codice in un ambiente controllato"}
+	],
+	"edges":[
+		{"id":"357ab95a3042a862","fromNode":"09968526abe0bdb3","fromSide":"bottom","toNode":"b0c88dfc79d2fff3","toSide":"top"},
+		{"id":"deef8cea8a494f97","fromNode":"f75cf65298b915e2","fromSide":"bottom","toNode":"09968526abe0bdb3","toSide":"top"},
+		{"id":"7a834bd0adb55d88","fromNode":"f75cf65298b915e2","fromSide":"bottom","toNode":"9e519b39c620fe9f","toSide":"top"},
+		{"id":"2826df3b7d4d2618","fromNode":"9e519b39c620fe9f","fromSide":"bottom","toNode":"18257b3fc90c7b53","toSide":"top"},
+		{"id":"090f9c7d0d485931","fromNode":"9e519b39c620fe9f","fromSide":"bottom","toNode":"819f7f4369c33992","toSide":"top"},
+		{"id":"31e1e394fa31b4f2","fromNode":"f75cf65298b915e2","fromSide":"right","toNode":"82a59d052ef8aec0","toSide":"top"}
+	]
+}
